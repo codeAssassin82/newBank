@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Statement </title>
+  <title>Angular</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href='style.css'></>
+
+</head>
+<body ng-app="myApp" ng-controller='mainCtrl'>
+  <div class='container '>
+    <h1>Bank Statement</h1>
+    <label for="Enter"></label>
+    <input type="text" ng-model='desc'>
+
+    <input type="number" ng-model='credit'>
+    <input type="number" ng-model='debit'>
+    <button ng-click='addBank()' ui-keypress="{'enter':'foo(edItem)'}">enter</button>
+
+    <table class='table'>
+      <h2>Balance: {{balance | currency}} </h2>
+      <thead>
+        <th>desc</th>
+
+        <th>credits</th>
+        <th>debits</th>
+      </thead>
+        <tbody>
+          <tr id='template' ng-repeat='bank in app track by $index'>
+            <td>{{bank.desc}}</td>
+
+            <td>{{bank.credit | currency}}</td>
+            <td>{{bank.debit | currency}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
